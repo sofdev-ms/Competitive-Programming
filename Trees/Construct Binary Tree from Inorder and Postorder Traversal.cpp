@@ -28,7 +28,7 @@ TreeNode * build(vector < int > &inorder , vector < int > &postorder, int l1 , i
     
     TreeNode * temp = new TreeNode(postorder[r2]);
     int index = search_index(inorder , postorder[r2] , l1 , r1);
-    temp->left = build(inorder , postorder , l1 , index - 1, l2 + (index - l1) - 1);
+    temp->left = build(inorder , postorder , l1 , index - 1, r2 - (r1 - index) - 1);
     temp->right = build(inorder , postorder , index + 1 , r1 , r2 - 1);
     
     return temp;
